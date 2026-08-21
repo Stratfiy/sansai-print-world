@@ -2,9 +2,14 @@
 
 export const company = {
   name: "Sansai Print World",
-  phone: "+91 98765 43210",
-  phoneRaw: "+919876543210",
-  email: "info@sansaiprintworld.in",
+  legalName: "Sansai Print World Pvt. Ltd.",
+  contactPerson: "Geetha",
+  contactRole: "Senior Manager",
+  phone: "+91 70929 28022",
+  phoneRaw: "+917092928022",
+  email: "geetha@sansaiprintworld.in",
+  website: "www.sansaiprintworld.in",
+  address: "1B, Alsa Pasadena, Ground Floor, 44, Halls Road, Kilpauk, Chennai - 600010",
   since: "Since 2017 · India · UAE · SG · MY",
 };
 
@@ -133,10 +138,23 @@ export const values = [
 ];
 
 export const contactChannels = [
-  { icon: "Phone", label: "Call us", value: "+91 98765 43210", href: "tel:+919876543210" },
-  { icon: "Mail", label: "Email", value: "info@sansaiprintworld.in", href: "mailto:info@sansaiprintworld.in" },
-  { icon: "MapPin", label: "Chennai HQ", value: "15, Anna Salai, Nandanam, Chennai, Tamil Nadu 600035", href: "#" },
-  { icon: "MapPin", label: "Vijayawada", value: "42, MG Road, Governorpet, Vijayawada, Andhra Pradesh 520002", href: "#" },
+  { icon: "Phone", label: "Call us", value: "+91 70929 28022", href: "tel:+917092928022" },
+  { icon: "Mail", label: "Email", value: "geetha@sansaiprintworld.in", href: "mailto:geetha@sansaiprintworld.in" },
+  { icon: "User", label: "Geetha · Senior Manager", value: "Your dedicated point of contact for quotes & support", href: "tel:+917092928022" },
+  { icon: "MapPin", label: "Chennai Office", value: "1B, Alsa Pasadena, Ground Floor, 44, Halls Road, Kilpauk, Chennai - 600010", href: "https://maps.google.com/?q=44+Halls+Road+Kilpauk+Chennai+600010" },
+];
+
+export const clients = [
+  { name: "RapidPrint", place: "Chennai", color: "#2563eb", industry: "Digital Print Shop" },
+  { name: "Coastal University", place: "Chennai", color: "#ec0f74", industry: "Education" },
+  { name: "PrintHub", place: "Vijayawada", color: "#f59e0b", industry: "Print Shop" },
+  { name: "Dubai Print Co.", place: "Dubai", color: "#0d9488", industry: "Enterprise" },
+  { name: "Meridian Press", place: "Bengaluru", color: "#7c3aed", industry: "Publisher" },
+  { name: "Aster Health", place: "Kochi", color: "#0ea5e9", industry: "Healthcare" },
+  { name: "Sunrise Media", place: "Singapore", color: "#e11d48", industry: "Media" },
+  { name: "Civic Bureau", place: "Chennai", color: "#0e1b3d", industry: "Government" },
+  { name: "Nimbus Studios", place: "Kuala Lumpur", color: "#059669", industry: "Studio" },
+  { name: "Vertex Corp", place: "Hyderabad", color: "#d97706", industry: "Corporate" },
 ];
 
 export const interestOptions = [

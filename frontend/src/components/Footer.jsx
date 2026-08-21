@@ -53,7 +53,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-start gap-3 text-[15px] text-white/75">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-[#ec0f74]" /> 15, Anna Salai, Nandanam, Chennai 600035
+                <MapPin size={16} className="mt-0.5 shrink-0 text-[#ec0f74]" /> {company.address}
               </li>
             </ul>
             <Link to="/contact" className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-[14px] font-semibold text-[#0e1b3d] transition-transform hover:-translate-y-0.5">

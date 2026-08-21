@@ -101,3 +101,86 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Test the Enquiry API for a printing company site"
+
+backend:
+  - task: "POST /api/enquiries - Create enquiry"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Successfully tested POST /api/enquiries endpoint. Returns 200 with id, status='new', and created_at timestamp. All required fields (name, email, phone, interest) are properly validated. MongoDB _id is not leaked in response."
+
+  - task: "POST /api/enquiries - Validation for required fields"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Successfully tested validation. Missing required field 'name' correctly returns 422 validation error with proper error details."
+
+  - task: "GET /api/enquiries - List all enquiries"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Successfully tested GET /api/enquiries endpoint. Returns 200 with list of enquiries sorted newest first. MongoDB _id is not leaked. Created enquiry is present in the list."
+
+  - task: "PATCH /api/enquiries/{id} - Update enquiry status"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Successfully tested PATCH /api/enquiries/{id} endpoint. Returns 200 with updated status. MongoDB _id is not leaked in response."
+
+  - task: "PATCH /api/enquiries/{id} - Handle non-existent enquiry"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Successfully tested error handling. PATCH on non-existent enquiry ID correctly returns 404 with 'Enquiry not found' message."
+
+frontend:
+  # No frontend testing required as per instructions
+
+metadata:
+  created_by: "testing_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "All Enquiry API endpoints tested and working"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "testing"
+    message: "Completed comprehensive testing of all Enquiry API endpoints. All 5 test cases passed successfully (100% success rate). The API correctly handles: 1) Creating enquiries with proper validation, 2) Listing enquiries sorted newest first, 3) Updating enquiry status, 4) Error handling for missing fields (422) and non-existent resources (404). MongoDB _id is properly excluded from all responses. Backend is production-ready."

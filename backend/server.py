@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -37,6 +37,33 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+
+class Enquiry(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    company: str = ""
+    email: str
+    phone: str
+    interest: str
+    message: str = ""
+    status: str = "new"  # new | contacted | closed
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
+class EnquiryCreate(BaseModel):
+    name: str
+    company: str = ""
+    email: str
+    phone: str
+    interest: str
+    message: str = ""
+
+
+class EnquiryStatusUpdate(BaseModel):
+    status: str
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
@@ -65,6 +92,39 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+@api_router.post("/enquiries", response_model=Enquiry)
+async def create_enquiry(input: EnquiryCreate):
+    enquiry = Enquiry(**input.model_dump())
+    doc = enquiry.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    await db.enquiries.insert_one(doc)
+    return enquiry
+
+
+@api_router.get("/enquiries", response_model=List[Enquiry])
+async def get_enquiries():
+    enquiries = await db.enquiries.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
+    for e in enquiries:
+        if isinstance(e.get('created_at'), str):
+            e['created_at'] = datetime.fromisoformat(e['created_at'])
+    return enquiries
+
+
+@api_router.patch("/enquiries/{enquiry_id}", response_model=Enquiry)
+async def update_enquiry_status(enquiry_id: str, payload: EnquiryStatusUpdate):
+    result = await db.enquiries.find_one_and_update(
+        {"id": enquiry_id},
+        {"$set": {"status": payload.status}},
+        projection={"_id": 0},
+        return_document=True,
+    )
+    if not result:
+        raise HTTPException(status_code=404, detail="Enquiry not found")
+    if isinstance(result.get('created_at'), str):
+        result['created_at'] = datetime.fromisoformat(result['created_at'])
+    return result
+
 
 # Include the router in the main app
 app.include_router(api_router)

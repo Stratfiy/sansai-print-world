@@ -3,27 +3,33 @@ import * as Icons from "lucide-react";
 import { Clock } from "lucide-react";
 import { toast } from "sonner";
 import { contactChannels, interestOptions } from "../mock";
+import { createEnquiry } from "../lib/api";
 
 const inputCls =
   "w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-[15px] text-[#0e1b3d] outline-none transition-colors focus:border-[#0e1b3d] placeholder:text-[#9aa2b4]";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", interest: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.phone || !form.interest) {
       toast.error("Please fill all required fields.");
       return;
     }
-    // Frontend-only mock submission
-    const saved = JSON.parse(localStorage.getItem("sansai_enquiries") || "[]");
-    saved.push({ ...form, at: new Date().toISOString() });
-    localStorage.setItem("sansai_enquiries", JSON.stringify(saved));
-    toast.success("Enquiry sent! We’ll get back within 24 hours.");
-    setForm({ name: "", company: "", email: "", phone: "", interest: "", message: "" });
+    setSubmitting(true);
+    try {
+      await createEnquiry(form);
+      toast.success("Enquiry sent! We’ll get back within 24 hours.");
+      setForm({ name: "", company: "", email: "", phone: "", interest: "", message: "" });
+    } catch (err) {
+      toast.error("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -107,8 +113,8 @@ const ContactPage = () => {
                   <label className="mb-1.5 block text-[14px] font-medium text-[#0e1b3d]">Tell us about your requirement</label>
                   <textarea rows={4} className={inputCls} value={form.message} onChange={set("message")} placeholder="Monthly volume, paper stock, current setup…" />
                 </div>
-                <button type="submit" className="w-full rounded-full bg-[#0e1b3d] px-7 py-3.5 text-[15px] font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-[#1b2b52]">
-                  Send enquiry
+                <button type="submit" disabled={submitting} className="w-full rounded-full bg-[#0e1b3d] px-7 py-3.5 text-[15px] font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-[#1b2b52] disabled:opacity-60 disabled:hover:translate-y-0">
+                  {submitting ? "Sending…" : "Send enquiry"}
                 </button>
               </form>
             </div>
