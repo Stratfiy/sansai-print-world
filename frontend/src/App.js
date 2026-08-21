@@ -10,6 +10,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
 import AdminPage from "./pages/AdminPage";
 import { Toaster } from "./components/ui/sonner";
+import WhatsAppWidget from "./components/WhatsAppWidget";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -33,6 +34,7 @@ function App() {
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
         <Footer />
+        <WhatsAppWidget />
         <Toaster position="top-right" richColors />
       </BrowserRouter>
     </div>
