@@ -7,6 +7,8 @@ export const company = {
   contactRole: "Senior Manager",
   phone: "+91 70929 28022",
   phoneRaw: "+917092928022",
+  phone2: "+91 70929 28021",
+  phone2Raw: "+917092928021",
   email: "geetha@sansaiprintworld.in",
   website: "www.sansaiprintworld.in",
   address: "1B, Alsa Pasadena, Ground Floor, 44, Halls Road, Kilpauk, Chennai - 600010",
@@ -138,7 +140,7 @@ export const values = [
 ];
 
 export const contactChannels = [
-  { icon: "Phone", label: "Call us", value: "+91 70929 28022", href: "tel:+917092928022" },
+  { icon: "Phone", label: "Call us", value: "+91 70929 28022 · +91 70929 28021", href: "tel:+917092928022" },
   { icon: "Mail", label: "Email", value: "geetha@sansaiprintworld.in", href: "mailto:geetha@sansaiprintworld.in" },
   { icon: "User", label: "Geetha · Senior Manager", value: "Your dedicated point of contact for quotes & support", href: "tel:+917092928022" },
   { icon: "MapPin", label: "Chennai Office", value: "1B, Alsa Pasadena, Ground Floor, 44, Halls Road, Kilpauk, Chennai - 600010", href: "https://maps.google.com/?q=44+Halls+Road+Kilpauk+Chennai+600010" },

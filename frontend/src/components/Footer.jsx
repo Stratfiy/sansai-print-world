@@ -48,6 +48,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href={`tel:${company.phone2Raw}`} className="flex items-center gap-3 text-[15px] text-white/75 hover:text-white">
+                  <Phone size={16} className="text-[#ec0f74]" /> {company.phone2}
+                </a>
+              </li>
+              <li>
                 <a href={`mailto:${company.email}`} className="flex items-center gap-3 text-[15px] text-white/75 hover:text-white">
                   <Mail size={16} className="text-[#ec0f74]" /> {company.email}
                 </a>
