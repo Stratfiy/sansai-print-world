@@ -10,8 +10,10 @@ export const company = {
   phone2: "+91 70929 28021",
   phone2Raw: "+917092928021",
   email: "geetha@sansaiprintworld.in",
+  email2: "vikram@sansaiprintworld.in",
   website: "www.sansaiprintworld.in",
   address: "1B, Alsa Pasadena, Ground Floor, 44, Halls Road, Kilpauk, Chennai - 600010",
+  hours: "Mon–Sat, 10am–6pm IST",
   since: "Since 2017 · India · UAE · SG · MY",
 };
 
@@ -141,8 +143,8 @@ export const values = [
 
 export const contactChannels = [
   { icon: "Phone", label: "Call us", value: "+91 70929 28022 · +91 70929 28021", href: "tel:+917092928022" },
-  { icon: "Mail", label: "Email", value: "geetha@sansaiprintworld.in", href: "mailto:geetha@sansaiprintworld.in" },
-  { icon: "User", label: "Geetha · Senior Manager", value: "Your dedicated point of contact for quotes & support", href: "tel:+917092928022" },
+  { icon: "Mail", label: "Email us", value: "geetha@sansaiprintworld.in · vikram@sansaiprintworld.in", href: "mailto:geetha@sansaiprintworld.in" },
+  { icon: "Clock", label: "Working hours", value: "Mon–Sat, 10am–6pm IST · Priority support 24/7", href: "#" },
   { icon: "MapPin", label: "Chennai Office", value: "1B, Alsa Pasadena, Ground Floor, 44, Halls Road, Kilpauk, Chennai - 600010", href: "https://maps.google.com/?q=44+Halls+Road+Kilpauk+Chennai+600010" },
 ];
 
@@ -165,3 +167,13 @@ export const interestOptions = [
 ];
 
 export const heroImage = "https://images.unsplash.com/photo-1503694978374-8a2fa686963a?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200";
+
+export const storyImage = "https://images.unsplash.com/photo-1666101041092-468eb2818c87?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwyfHxwaG90b2NvcGllcnxlbnwwfHx8fDE3ODgyNDQ0Mjd8MA&ixlib=rb-4.1.0&q=85&w=900";
+
+export const galleryImages = [
+  { src: "https://images.unsplash.com/photo-1650094980833-7373de26feb6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwxfHxwaG90b2NvcGllcnxlbnwwfHx8fDE3ODgyNDQ0Mjd8MA&ixlib=rb-4.1.0&q=85&w=800", caption: "Production printers" },
+  { src: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwzfHxwaG90b2NvcGllcnxlbnwwfHx8fDE3ODgyNDQ0Mjd8MA&ixlib=rb-4.1.0&q=85&w=800", caption: "Office copiers" },
+  { src: "https://images.unsplash.com/photo-1750537735437-847075c29538?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHw0fHxwcmludCUyMHNob3B8ZW58MHx8fHwxNzg4MjQ0NDI3fDA&ixlib=rb-4.1.0&q=85&w=800", caption: "Print shop inventory" },
+  { src: "https://images.unsplash.com/photo-1775163035702-06e47ba88857?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHw0fHxvZmZpY2UlMjBwcmludGVyfGVufDB8fHx8MTc4ODI0NDQyN3ww&ixlib=rb-4.1.0&q=85&w=800", caption: "On-site service" },
+];
+

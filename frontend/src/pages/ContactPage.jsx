@@ -75,7 +75,7 @@ const ContactPage = () => {
                   <Clock size={15} className="text-[#ff5ea3]" /> Response SLA
                 </div>
                 <div className="mt-2 font-display text-[26px] font-extrabold">Under 24 hours</div>
-                <div className="mt-1 text-[14px] text-white/60">Mon–Sat, 9am–7pm IST. Priority support 24/7.</div>
+                <div className="mt-1 text-[14px] text-white/60">Mon–Sat, 10am–6pm IST. Priority support 24/7.</div>
               </div>
             </div>
 

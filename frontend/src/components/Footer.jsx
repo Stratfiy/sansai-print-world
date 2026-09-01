@@ -57,6 +57,11 @@ const Footer = () => {
                   <Mail size={16} className="text-[#ec0f74]" /> {company.email}
                 </a>
               </li>
+              <li>
+                <a href={`mailto:${company.email2}`} className="flex items-center gap-3 text-[15px] text-white/75 hover:text-white">
+                  <Mail size={16} className="text-[#ec0f74]" /> {company.email2}
+                </a>
+              </li>
               <li className="flex items-start gap-3 text-[15px] text-white/75">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-[#ec0f74]" /> {company.address}
               </li>

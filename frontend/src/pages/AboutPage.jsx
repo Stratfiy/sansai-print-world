@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as Icons from "lucide-react";
 import { ArrowRight } from "lucide-react";
-import { heroStats, milestones, values } from "../mock";
+import { heroStats, milestones, values, storyImage } from "../mock";
 
 const PageHead = ({ label, title, sub }) => (
   <section className="relative overflow-hidden grid-bg pt-36 pb-16">
@@ -51,6 +51,10 @@ const AboutPage = () => {
               <p>Today, we serve print shops, publishers, universities and enterprises across four countries with a mixed fleet of brand-new and reconditioned production printers, backed by a service network that resolves 92% of tickets within 4 hours.</p>
               <p>Our philosophy is simple: the machine matters less than the uptime it delivers. Everything we do — sourcing, servicing, training — protects the operator who has to hit tomorrow’s deadline.</p>
             </div>
+          </div>
+
+          <div className="mt-14 overflow-hidden rounded-[28px] shadow-[0_28px_70px_rgba(14,27,61,0.14)]">
+            <img src={storyImage} alt="Technician operating a production photocopier" className="h-[300px] w-full object-cover md:h-[420px]" />
           </div>
         </div>
       </section>

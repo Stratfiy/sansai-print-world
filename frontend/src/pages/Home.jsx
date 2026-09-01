@@ -6,6 +6,7 @@ import Industries from "../components/home/Industries";
 import GlobalReach from "../components/home/GlobalReach";
 import Testimonials from "../components/home/Testimonials";
 import ClientLogosWall from "../components/home/ClientLogosWall";
+import Gallery from "../components/home/Gallery";
 import CTASection from "../components/home/CTASection";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       <GlobalReach />
       <Testimonials />
       <ClientLogosWall />
+      <Gallery />
       <CTASection />
     </main>
   );
