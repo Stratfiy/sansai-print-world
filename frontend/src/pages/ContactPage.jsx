@@ -119,6 +119,34 @@ const ContactPage = () => {
               </form>
             </div>
           </div>
+
+          {/* Interactive Map */}
+          <div className="mt-10">
+            <div className="mb-4 flex items-center gap-2">
+              <Icons.MapPin size={18} className="text-[#ec0f74]" />
+              <h2 className="font-display text-[20px] font-bold text-[#0e1b3d]">Find our Chennai office</h2>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-black/[0.06] shadow-[0_20px_50px_rgba(14,27,61,0.08)]">
+              <iframe
+                title="Sansai Print World — Kilpauk, Chennai"
+                src="https://www.google.com/maps?q=44%20Halls%20Road%2C%20Kilpauk%2C%20Chennai%20600010&output=embed"
+                width="100%"
+                height="420"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <a
+              href="https://maps.google.com/?q=44+Halls+Road+Kilpauk+Chennai+600010"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#0e1b3d]/15 bg-white px-5 py-2.5 text-[14px] font-semibold text-[#0e1b3d] transition-colors hover:bg-[#0e1b3d]/5"
+            >
+              <Icons.Navigation size={16} className="text-[#ec0f74]" /> Get directions
+            </a>
+          </div>
         </div>
       </section>
     </main>
