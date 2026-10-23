@@ -47,7 +47,8 @@ const AboutPage = () => {
               </h2>
             </div>
             <div className="space-y-5 text-[16px] leading-relaxed text-[#5b6478]">
-              <p>Founded in 2017 in Chennai, Sansai Print World began by importing certified reconditioned photocopiers from Japan and Europe — machines rebuilt to factory spec and delivered with warranty.</p>
+              <p>Founded in 2024
+                in Chennai, Sansai Print World began by importing certified reconditioned photocopiers from Japan and Europe — machines rebuilt to factory spec and delivered with warranty.</p>
               <p>Today, we serve print shops, publishers, universities and enterprises across four countries with a mixed fleet of brand-new and reconditioned production printers, backed by a service network that resolves 92% of tickets within 4 hours.</p>
               <p>Our philosophy is simple: the machine matters less than the uptime it delivers. Everything we do — sourcing, servicing, training — protects the operator who has to hit tomorrow’s deadline.</p>
             </div>
